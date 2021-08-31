@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling Forest</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <a href="#" class="logo">Floresta</a>
+      <ul>
+        <li><a href="#" class="active">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Destino</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </header>
+    <section>
+      <h2 id="text"><span>É hora de uma nova</span><br />Aventura</h2>
+      <img src="images/bird1.png" id="bird1">
+      <img src="images/bird2.png" id="bird2">
+      <img src="images/forest.png" id="forest">
+      <a href="#" id="btn">Explorar</a>
+      <img src="images/rocks.png" id="rocks">
+      <img src="images/water.png" id="water">
+    </section>
+    <div class="sec">
+      <h2>Parallax Scrolling Effects</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        iaculis, velit sed bibendum sodales, magna nibh tempor risus, eu
+        consequat ipsum augue sed lacus. Suspendisse in ligula sed sapien
+        suscipit posuere quis non velit. Donec mollis enim lacinia, condimentum
+        dui interdum, viverra tortor. Proin egestas, enim vel tempus egestas,
+        massa ante gravida diam, ut tempus velit odio at metus. Morbi aliquam
+        mauris lacus, eget tristique tortor tincidunt et. Morbi id dolor at
+        ipsum feugiat eleifend. Etiam rutrum aliquam ex. Nam posuere odio quam,
+        ut consectetur orci mollis a. Sed in aliquet est, in faucibus tortor. In
+        rhoncus in lectus sit amet vehicula. Nunc tristique nisi ut condimentum
+        porttitor. Vestibulum tempor imperdiet interdum. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus.<br /><br />Duis faucibus
+        dignissim dolor, sed gravida sapien varius ut. Maecenas sed mollis
+        libero. Pellentesque ullamcorper, turpis euismod fermentum varius, enim
+        augue semper augue, vel aliquam risus magna eget orci. Nullam
+        pellentesque est et pharetra placerat. Maecenas nibh eros, egestas vitae
+        lorem dapibus, accumsan sagittis leo. Phasellus blandit neque eget
+        ullamcorper cursus. Nunc in magna nisl. Nulla facilisi. Duis auctor
+        imperdiet leo, malesuada tempus metus. Mauris molestie et quam sed
+        bibendum. Duis tempus mi sit amet dolor sodales, in maximus nulla
+        pretium. Praesent egestas justo nec nulla posuere, vel vestibulum nibh
+        pharetra. Vestibulum aliquam ipsum nec velit elementum tincidunt. Sed et
+        nibh neque.<br /><br />Ut nec arcu enim. Proin eu auctor eros, ac
+        condimentum est. Aliquam erat volutpat. Duis id odio nibh. Etiam sit
+        amet tempus lacus. Pellentesque fringilla libero vel porta posuere.
+        Aenean auctor, dui in sodales efficitur, leo urna gravida quam, sit amet
+        mollis dui neque vel enim. Mauris quis magna scelerisque, facilisis
+        turpis non, convallis nulla. Maecenas rhoncus nisi eu purus scelerisque,
+        non ornare velit aliquam. Sed feugiat ante eget orci imperdiet
+        consequat. Cras fermentum ipsum ac justo sollicitudin, quis tempor ex
+        commodo. Maecenas eu risus elit.<br /><br />Interdum et malesuada fames
+        ac ante ipsum primis in faucibus. Fusce suscipit dictum nunc quis
+        pretium. Sed placerat efficitur nibh, id ultrices lorem luctus accumsan.
+        Aenean pulvinar mi ante, ac interdum lacus porta a. Vestibulum ante
+        ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+        Curabitur nulla mi, lobortis in tortor vel, ultrices euismod dui.
+        Pellentesque eu ante quis nulla tincidunt faucibus. Nam ac risus
+        sagittis, vulputate dui id, efficitur quam. Cras porta ipsum nibh, quis
+        venenatis nibh placerat vel. Donec mollis finibus mi vel porttitor.
+        Curabitur a ante est. Proin justo velit, rutrum vitae nisl quis, varius
+        consequat diam. Duis eu sapien scelerisque, hendrerit leo et,
+        scelerisque magna.<br /><br />Maecenas mollis blandit libero sit amet
+        tempus. Vivamus lorem eros, sagittis vel turpis vel, volutpat dapibus
+        nisl. Etiam euismod accumsan nisl eget rhoncus. Nam ac turpis sed lorem
+        placerat efficitur eget et mi. Mauris quis cursus diam. Fusce id lacinia
+        erat. Mauris congue risus quis metus euismod, nec vestibulum diam
+        tincidunt.
+      </p>
+    </div>
+    <script>
+        let header = document.getElementById('header');
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let forest = document.getElementById('forest');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let water = document.getElementById('water');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -0.3 + '%';
+            bird1.style.top = value * -0.6 + 'px';
+            bird1.style.left = value * 0.9 + 'px';
+            bird2.style.top = value * -0.6 + 'px';
+            bird2.style.left = value * -2 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -0.10 + 'px';
+            forest.style.top = value * 0.35 + 'px';
+            header.style.top = value * 0.5 + 'px'; 
+        })
+    </script>
+  </body>
+</html>
